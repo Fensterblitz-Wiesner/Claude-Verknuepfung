@@ -23,6 +23,17 @@
     console.info("[Fensterblitz] Noch keine WhatsApp-Nummer in js/config.js – WhatsApp-Buttons führen vorerst zum Kontaktformular.");
   }
 
+  /* ---------- Schwebender WhatsApp-Button ---------- */
+  // Solange der große WhatsApp-Button oben sichtbar ist, wird der schwebende ausgeblendet
+  // (sonst liegt er auf dem Handy über der Telefonnummer).
+  var fab = document.querySelector(".wa-fab");
+  var heroWa = document.querySelector(".hero__wa");
+  if (fab && heroWa && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (eintraege) {
+      fab.classList.toggle("is-versteckt", eintraege[0].isIntersecting);
+    }).observe(heroWa);
+  }
+
   /* ---------- Mobile Navigation ---------- */
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.getElementById("mobile-menu");

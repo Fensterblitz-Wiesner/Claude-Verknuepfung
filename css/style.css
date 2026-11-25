@@ -471,6 +471,24 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
 .hero__badge--b { right: -6px; top: 10%; }
 .hero__badge--b .hero__badge-icon { background: #fff4d6; color: #b07b00; }
 
+/* Handy & Tablet: Fenster zwischen Text und WhatsApp-Button, damit die Putz-Animation
+   gleich beim Aufruf im Bild ist. (.hero__text löst sich auf, seine Teile werden neu sortiert.) */
+@media (max-width: 959px) {
+  .hero { padding-top: calc(var(--header-h) + 30px); }
+  .hero__grid { display: flex; flex-direction: column; gap: 0; }
+  .hero__text { display: contents; }
+  .hero__eyebrow { align-self: flex-start; margin-bottom: 14px; }
+  .hero h1 { margin-bottom: 14px; }
+  .hero__lead { margin-bottom: 12px; }
+  .hero__visual { order: 1; max-width: 250px; margin: 0 auto 16px; }
+  .hero__actions, .trust-list { order: 2; }
+  .hero__badge { padding: 6px 12px 6px 6px; gap: 7px; font-size: .8rem; }
+  .hero__badge-icon { width: 26px; height: 26px; }
+  .hero__badge-icon svg { width: 15px; height: 15px; }
+  .hero__badge--a { left: -14px; bottom: 12%; }
+  .hero__badge--b { right: -14px; top: 6%; }
+}
+
 @media (min-width: 960px) {
   .hero { padding: calc(var(--header-h) + 80px) 0 100px; border-radius: 0 0 56px 56px; }
   .hero__grid { grid-template-columns: 1.1fr .9fr; gap: 56px; }
@@ -853,9 +871,11 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
   background: var(--c-wa-brand);
   color: #fff;
   box-shadow: 0 12px 28px -8px rgba(14, 130, 67, .7);
-  transition: transform .2s;
+  transition: transform .2s, opacity .25s, visibility 0s;
 }
 .wa-fab:hover { color: #fff; transform: scale(1.07); }
+/* ausgeblendet, solange der große WhatsApp-Button oben im Bild ist (js/main.js) */
+.wa-fab.is-versteckt { opacity: 0; visibility: hidden; transform: scale(.6); transition: transform .25s, opacity .25s, visibility 0s .25s; }
 .wa-fab svg { width: 34px; height: 34px; position: relative; }
 .wa-fab::before {
   content: "";
