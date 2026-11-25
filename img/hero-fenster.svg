@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 540" role="img" aria-labelledby="titel">
+  <title id="titel">Illustration: streifenfrei geputztes Fenster mit Fensterabzieher</title>
+  <defs>
+    <linearGradient id="glas" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#CFDDFF"/>
+      <stop offset="0.55" stop-color="#E6EEFF"/>
+      <stop offset="1" stop-color="#F7F9FF"/>
+    </linearGradient>
+    <linearGradient id="glanz" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E3E9FA"/>
+    </linearGradient>
+    <clipPath id="scheiben">
+      <rect x="96" y="66" width="138" height="98" rx="6"/>
+      <rect x="246" y="66" width="138" height="98" rx="6"/>
+      <rect x="96" y="176" width="138" height="278" rx="6"/>
+      <rect x="246" y="176" width="138" height="278" rx="6"/>
+    </clipPath>
+    <filter id="schatten" x="-25%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#14205E" flood-opacity="0.32"/>
+    </filter>
+    <filter id="schatten-klein" x="-20%" y="-50%" width="140%" height="250%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#14205E" flood-opacity="0.25"/>
+    </filter>
+    <path id="stern" d="M0-14C1.6-4.6 4.6-1.6 14 0 4.6 1.6 1.6 4.6 0 14-1.6 4.6-4.6 1.6-14 0-4.6-1.6-1.6-4.6 0-14Z"/>
+  </defs>
+
+  <style>
+    .glanz { animation: glanz 6.5s ease-in-out infinite; }
+    @keyframes glanz { 0% { transform: translateX(-380px); } 45%, 100% { transform: translateX(520px); } }
+    .funkel { transform-box: fill-box; transform-origin: center; animation: funkel 2.8s ease-in-out infinite; }
+    .f2 { animation-delay: .9s; } .f3 { animation-delay: 1.8s; } .f4 { animation-delay: 1.3s; }
+    @keyframes funkel { 0%, 100% { transform: scale(.55); opacity: .35; } 50% { transform: scale(1); opacity: 1; } }
+    .abzieher { animation: wischen 6.5s ease-in-out infinite; }
+    @keyframes wischen { 0%, 100% { transform: translate(0, -10px); } 50% { transform: translate(0, 14px); } }
+    @media (prefers-reduced-motion: reduce) { .glanz, .funkel, .abzieher { animation: none; } .glanz { transform: translateX(520px); } }
+  </style>
+
+  <!-- weicher Lichtkreis hinter dem Fenster -->
+  <circle cx="240" cy="250" r="225" fill="#fff" opacity="0.08"/>
+  <circle cx="240" cy="250" r="165" fill="#fff" opacity="0.07"/>
+
+  <!-- Fensterrahmen -->
+  <rect x="80" y="50" width="320" height="420" rx="22" fill="#fff" filter="url(#schatten)"/>
+
+  <!-- Scheiben -->
+  <g clip-path="url(#scheiben)">
+    <rect x="90" y="60" width="300" height="400" fill="url(#glas)"/>
+    <!-- statische Spiegelungen -->
+    <polygon points="60,360 300,120 342,120 60,402" fill="#fff" opacity="0.5"/>
+    <polygon points="60,440 330,170 344,170 60,454" fill="#fff" opacity="0.4"/>
+    <polygon points="230,470 420,280 420,330 280,470" fill="#fff" opacity="0.28"/>
+    <!-- wandernder Glanz -->
+    <g class="glanz">
+      <rect x="120" y="0" width="70" height="560" fill="url(#glanz)" transform="skewX(-22)"/>
+    </g>
+  </g>
+
+  <!-- Fenstergriff -->
+  <rect x="220" y="292" width="9" height="40" rx="4.5" fill="#D3DBF3"/>
+  <rect x="218" y="292" width="13" height="12" rx="4" fill="#BFC9EA"/>
+
+  <!-- Fensterbank -->
+  <rect x="56" y="466" width="368" height="22" rx="9" fill="url(#bank)" filter="url(#schatten-klein)"/>
+
+  <!-- Pflanze auf der Fensterbank -->
+  <g transform="translate(128 466)">
+    <path d="M-6-48C-26-62-32-84-24-96-8-86 0-66-6-48Z" fill="#2E9E62"/>
+    <path d="M4-46C10-70 30-86 44-82 42-64 24-50 4-46Z" fill="#3BB273"/>
+    <path d="M-2-44C-6-74 2-98 14-106 22-90 14-62-2-44Z" fill="#46C281"/>
+    <path d="M-24-44h48l-6 44h-36z" fill="#FFC83D"/>
+    <rect x="-27" y="-48" width="54" height="10" rx="4" fill="#F2B51F"/>
+  </g>
+
+  <!-- Fensterabzieher mit Wassertropfen -->
+  <g transform="translate(318 326) rotate(-16)">
+    <g class="abzieher">
+      <rect x="-8" y="-96" width="16" height="88" rx="8" fill="#FFC83D"/>
+      <rect x="-9.5" y="-40" width="19" height="9" rx="3.5" fill="#E5A800"/>
+      <rect x="-66" y="-12" width="132" height="18" rx="7" fill="#3B4DB3"/>
+      <rect x="-70" y="4" width="140" height="7" rx="3.5" fill="#1B1F2A"/>
+      <path d="M-40 18c0 4-3 7-6 7s-6-3-6-7 6-10 6-10 6 6 6 10z" fill="#8FB0FF"/>
+      <path d="M10 20c0 3-2 5-4.5 5S1 23 1 20s4.5-8 4.5-8S10 17 10 20z" fill="#8FB0FF"/>
+      <path d="M48 17c0 3-2 5-4 5s-4-2-4-5 4-7 4-7 4 4 4 7z" fill="#8FB0FF"/>
+    </g>
+  </g>
+
+  <!-- Funkeln -->
+  <!-- Position am <g>, Animation am <use> (sonst überschreibt die Animation die Position) -->
+  <g transform="translate(438 92) scale(1.3)"><use href="#stern" class="funkel" fill="#fff"/></g>
+  <g transform="translate(42 232)"><use href="#stern" class="funkel f2" fill="#FFC83D"/></g>
+  <g transform="translate(150 110) scale(1.1)"><use href="#stern" class="funkel f3" fill="#5F84FF"/></g>
+  <g transform="translate(446 372) scale(0.8)"><use href="#stern" class="funkel f4" fill="#fff"/></g>
+  <g transform="translate(300 214) scale(0.7)"><use href="#stern" class="funkel f2" fill="#fff"/></g>
+</svg>
