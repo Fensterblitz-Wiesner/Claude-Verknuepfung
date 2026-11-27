@@ -14,7 +14,7 @@ Statische Webseite (HTML, CSS, JavaScript): kein Baukasten, keine Datenbank, kei
    im Format `4917612345678` eintragen (49 statt der führenden 0, keine Leerzeichen, kein +).
    Solange dort noch `X` stehen, führen alle WhatsApp-Buttons zum Kontaktformular.
 2. **Kontaktformular aktivieren (einmalig):** Seite online stellen und das Formular einmal selbst
-   absenden. FormSubmit schickt dann eine Bestätigungs-Mail an fensterblitz-wiesner@ik.me, in der
+   absenden. FormSubmit schickt dann eine Bestätigungs-Mail an info@fensterblitz-wiesner.de, in der
    du auf „Activate Form“ klickst. Erst danach kommen Anfragen an.
    *Optional:* In der Aktivierungs-Mail steht eine zufällige Zeichenfolge. Trage sie in
    `js/config.js` bei `formsubmitId` ein, dann steht deine E-Mail-Adresse nicht mehr im Formular (weniger Spam).

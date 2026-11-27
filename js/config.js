@@ -12,7 +12,7 @@ window.FB_CONFIG = {
   whatsappText: "Hallo Fensterblitz Wiesner, ich interessiere mich für eine Fensterreinigung. Ich wohne in: ",
 
   // E-Mail-Adresse, an die das Kontaktformular geschickt wird.
-  email: "fensterblitz-wiesner@ik.me",
+  email: "info@fensterblitz-wiesner.de",
 
   // Optional: Nach der Aktivierung schickt FormSubmit dir eine zufällige Zeichenfolge
   // (z. B. "a1b2c3d4e5..."). Trägst du sie hier ein, steht deine E-Mail nicht mehr
